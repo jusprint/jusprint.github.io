@@ -1,0 +1,24 @@
+{
+  "name": "jusprint.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "jusprint"
+  ],
+  "homepage": "https://github.com/jusprint/jusprint.github.io#readme",
+  "bugs": {
+    "url": "https://github.com/jusprint/jusprint.github.io/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jusprint/jusprint.github.io.git"
+  },
+  "license": "MIT",
+  "author": "PuroTech PH",
+  "type": "commonjs",
+  "main": "admin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "terser script.js -o app.min.js --compress --mangle"
+  }
+}
