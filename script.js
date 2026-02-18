@@ -213,7 +213,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     color: order.color || "-",
     price: `₱${order.price}`,
     description: order.desc,
-    image: order.imageBase64 || "No image"
+    image_url: order.imageBase64 || "https://static.vecteezy.com/system/resources/thumbnails/074/482/764/small/3d-product-feedback-icon-on-transparent-background-png.png"
   };
 
   emailjs.send("service_b9niqqs", "template_3lguulw", templateParams)
