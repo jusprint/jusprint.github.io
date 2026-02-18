@@ -193,32 +193,35 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     imageBase64, createdAt: new Date()
   };
 
-  await db.collection("orders").add(order);
+ 
 
-  sendWhatsApp(order);
+  sendEmail(order);
   alert("Order submitted successfully!");
   location.reload();
 });
 
-// ========================
-// WhatsApp Notification
-// ========================
-function sendWhatsApp(order) {
-  const yourNumber = "639189647935";
-  const msg = `
-New Print Order!
-Name: ${order.name}
-Service: ${order.service}
-Size: ${order.size || "-"}
-Dimension: ${order.width || "-"} x ${order.height || "-"} ft
-Qty: ${order.qty}
-Color: ${order.color || "-"}
-Price: ₱${order.price}
-Desc: ${order.desc}
-  `;
-  window.open(`https://wa.me/${yourNumber}?text=${encodeURIComponent(msg)}`, "_blank");
-  if (order.phone) window.open(`https://wa.me/${order.phone}?text=${encodeURIComponent(msg)}`, "_blank");
+ function sendEmail(order) {
+  const templateParams = {
+    to_email: "jusprint.services@gmail.com",
+    from_name: order.name,
+    service: order.service,
+    size: order.size || "-",
+    dimensions: `${order.width || "-"} x ${order.height || "-"} ft`,
+    quantity: order.qty,
+    color: order.color || "-",
+    price: `₱${order.price}`,
+    description: order.desc,
+    image: order.imageBase64 || "No image"
+  };
+
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+    .then(function(response) {
+       alert("Order sent via email successfully!");
+    }, function(error) {
+       alert("Failed to send email. " + JSON.stringify(error));
+    });
 }
+
 
 // ========================
 // Initialize
