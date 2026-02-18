@@ -4,7 +4,7 @@
       "name": "3D Figurine",
       "icon": "m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9", 
       "sizes": ["X-Small 2in","Small 3in", "Medium 4in", "XL 5in","XXL 7in","XXXL 10in"],
-      "prices": { "X-Small 2in":169,"Small 3in":299, "Medium 4in":299, "XL 5in":699,"XXL 7in":1299,"XXXL 10in":3299 }
+      "prices": { "X-Small 2in":169,"Small 3in":299, "Medium 4in":299, "XL 5in":999,"XXL 7in":2699,"XXXL 10in":4299 }
     }, 
      {
       "name": "Aluminum Sheet",
