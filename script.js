@@ -200,7 +200,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   const templateParams = {
     order_id: 100001,
     to_email: order.email,
-    from_name: order.name,
+    from_name: order.name, 
     service: order.service,
     size: order.size || "-",
     dimensions: `${order.width || "-"} x ${order.height || "-"} ft`,
