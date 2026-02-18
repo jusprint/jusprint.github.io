@@ -203,6 +203,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
  function sendEmail(order) {
   const templateParams = {
+    order_id: 100001,
     to_email: "jusprint.services@gmail.com",
     from_name: order.name,
     service: order.service,
