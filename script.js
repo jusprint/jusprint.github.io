@@ -173,6 +173,7 @@ function fileToBase64(file) {
 // ========================
 document.getElementById("submitBtn").addEventListener("click", async () => {
   const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
   const desc = document.getElementById("desc").value;
   const file = document.getElementById("image")?.files[0];
@@ -186,7 +187,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   if (file) imageBase64 = await fileToBase64(file);
 
   const order = {
-    name, phone, service, size,
+    name,email, phone, service, size,
     width: widthEl.value || "", height: heightEl.value || "",
     qty: qtyEl.value || 1, color, desc,
     price: calculatePrice(),
@@ -214,7 +215,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     image: order.imageBase64 || "No image"
   };
 
-  emailjs.send("service_b9niqqs", "template_bzfx38b", templateParams)
+  emailjs.send("service_b9niqqs", "template_3lguulw", templateParams)
     .then(function(response) {
        alert("Order sent via email successfully!");
     }, function(error) {
