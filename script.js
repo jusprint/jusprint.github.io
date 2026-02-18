@@ -206,14 +206,17 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     order_id: 100001,
     to_email: "jusprint.services@gmail.com",
     from_name: order.name,
-    service: order.service,
-    size: order.size || "-",
-    dimensions: `${order.width || "-"} x ${order.height || "-"} ft`,
-    quantity: order.qty,
-    color: order.color || "-",
-    price: `₱${order.price}`,
-    description: order.desc,
-    image: order.imageBase64 || "No image"
+     orders: [
+    {
+      service: order.service,
+      size: order.size || "-",
+      dimensions: `${order.width || "-"} x ${order.height || "-"}`,
+      quantity: order.qty,
+      color: order.color || "-",
+      price: `₱${order.price}`,
+      description: order.desc
+    }
+  ]
   };
 
   emailjs.send("service_b9niqqs", "template_3lguulw", templateParams)
