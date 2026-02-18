@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "name": "3D Figurine",
+      "icon": "M12 8v4l3 3", 
+      "sizes": ["X-Small 2in","Small 3in", "Medium 4in", "XL 5in","XXL 7in","XXXL 10in"],
+      "prices": { "X-Small 2in":169,"Small 3in":299, "Medium 4in":299, "XL 5in":699,"XXL 7in":1299,"XXXL 10in":3299 }
+    }, 
+     {
+      "name": "Aluminum Sheet",
+      "icon": "M12 8v4l3 3", 
+      "sizes": ["A3", "A4"],
+      "prices": { "A3": 699, "A4": 499 }
+    },
+     {
+      "name": "Tarpaulin",
+      "icon": "M4 6h16M4 12h16M4 18h16",
+      "tarpaulinRate": 35
+    },
+    {
+      "name": "Sublimation Shirt",
+      "icon": "M12 2l3 7h7l-5.5 4 2 7-6-4-6 4 2-7L2 9h7l3-7z",
+      "sizes": ["X-Small","Small", "Medium", "Large", "XL"],
+      "prices": {  "X-Small": 200,"Small": 200, "Medium": 250, "Large": 300, "XL": 350 }
+    },
+     {
+      "name": "Mug",
+      "icon": "M12 2l3 7h7l-5.5 4 2 7-6-4-6 4 2-7L2 9h7l3-7z",
+      "sizes": ["Regular", "Colored","Magic"],
+      "prices": {  "Regular": 99, "Colored": 149,"Magic": 169 }
+    },
+    {
+      "name": "Sintra Board",
+      "icon": "M4 4h16v16H4z",
+      "sizes": ["A3", "A4"],
+      "prices": { "A3": 299, "A4": 149 }
+    }
+  ]
+}
