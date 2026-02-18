@@ -178,7 +178,9 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
  
   sendEmail(order); 
-  location.href="thankyou.html";
+  setTimeout(function(){
+    location.href="thankyou.html";
+  },2000)
 });
 
  function sendEmail(order) {
