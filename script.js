@@ -24,7 +24,7 @@ async function loadServices() {
  
 function renderServiceButtons() {
   const container = document.getElementById("serviceGroup");
-  container.innerHTML = `<p class="font-semibold mb-2">Select Service</p>
+  container.innerHTML = `<p class="font-semibold mb-2">Print Services</p>
                          <div class="flex gap-4 overflow-x-auto overflow-y-hidden py-2 px-1 scroll-smooth no-scrollbar" id="serviceButtons"></div>`;
   const serviceButtonsDiv = document.getElementById("serviceButtons");
 
