@@ -214,7 +214,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     image: order.imageBase64 || "No image"
   };
 
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+  emailjs.send("service_b9niqqs", "template_bzfx38b", templateParams)
     .then(function(response) {
        alert("Order sent via email successfully!");
     }, function(error) {
