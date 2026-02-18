@@ -11,9 +11,7 @@ const heightEl = document.getElementById("height");
 const qtyEl = document.getElementById("qty");
 const priceEl = document.getElementById("price");
 
-// ========================
-// Load services JSON
-// ========================
+ 
 let servicesData = [];
 
 async function loadServices() {
@@ -23,13 +21,11 @@ async function loadServices() {
   renderServiceButtons();
 }
 
-// ========================
-// Render Service Buttons
-// ========================
+ 
 function renderServiceButtons() {
   const container = document.getElementById("serviceGroup");
   container.innerHTML = `<p class="font-semibold mb-2">Select Service</p>
-                         <div class="grid grid-cols-2 gap-4" id="serviceButtons"></div>`;
+                         <div class="flex gap-4 overflow-x-auto overflow-y-hidden py-2 px-1 scroll-smooth no-scrollbar" id="serviceButtons"></div>`;
   const serviceButtonsDiv = document.getElementById("serviceButtons");
 
   servicesData.forEach(service => {
@@ -37,7 +33,10 @@ function renderServiceButtons() {
     label.className = "cursor-pointer";
     label.innerHTML = `
       <input type="radio" name="service" value="${service.name}" class="peer hidden" />
-      <div class="flex flex-col items-center justify-center p-4 border rounded-lg bg-white shadow hover:bg-blue-50 peer-checked:border-blue-500 peer-checked:bg-blue-100 transition">
+      <div class="flex-shrink-0 w-36 h-36 flex flex-col items-center justify-center 
+  p-4 border rounded-xl bg-white shadow-sm
+  hover:bg-blue-50 peer-checked:border-blue-500 peer-checked:bg-blue-100 
+  transition relative text-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-gray-700 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${service.icon}" />
         </svg>
@@ -50,9 +49,7 @@ function renderServiceButtons() {
   document.querySelectorAll('input[name="service"]').forEach(r => r.addEventListener("change", handleServiceChange));
 }
 
-// ========================
-// Handle Service Change
-// ========================
+ 
 function handleServiceChange() {
   const selectedName = document.querySelector('input[name="service"]:checked')?.value;
   const service = servicesData.find(s => s.name === selectedName);
@@ -92,17 +89,13 @@ function handleServiceChange() {
   calculatePrice();
 }
 
-// ========================
-// Get selected size
-// ========================
+ 
 function getSelectedSize() {
   const checked = document.querySelector('input[name="size"]:checked');
   return checked ? checked.value : "";
 }
 
-// ========================
-// Predefined Color Buttons
-// ========================
+ 
 const colorPalette = [
   { name: "Red", bg: "bg-red-600" },
   { name: "Blue", bg: "bg-blue-600" },
@@ -130,9 +123,7 @@ document.querySelectorAll("#colorOptions button").forEach(btn => {
   });
 });
 
-// ========================
-// Price Calculation
-// ========================
+ 
 function calculatePrice() {
   const selectedName = document.querySelector('input[name="service"]:checked')?.value;
   if (!selectedName) { priceEl.innerText = "0"; return 0; }
@@ -156,9 +147,7 @@ function calculatePrice() {
 
 [widthEl, heightEl, qtyEl].forEach(el => el.addEventListener("input", calculatePrice));
 
-// ========================
-// Convert file to Base64
-// ========================
+ 
 function fileToBase64(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -168,9 +157,7 @@ function fileToBase64(file) {
   });
 }
 
-// ========================
-// Submit Order
-// ========================
+ 
 document.getElementById("submitBtn").addEventListener("click", async () => {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -190,7 +177,6 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   };
 
  
-
   sendEmail(order); 
   location.href="thankyou.html";
 });
@@ -218,8 +204,5 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     });
 }
 
-
-// ========================
-// Initialize
-// ========================
+ 
 window.addEventListener("DOMContentLoaded", loadServices);
