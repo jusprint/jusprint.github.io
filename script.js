@@ -191,8 +191,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
  
 
-  sendEmail(order);
-  alert("Order submitted successfully!");
+  sendEmail(order); 
   location.href="thankyou.html";
 });
 
