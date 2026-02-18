@@ -182,8 +182,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
 
   if (!name || !service || !desc) { alert("Please fill required fields"); return; }
 
- 
-  const order = {
+   const order = {
     name,email, phone, service, size,
     width: widthEl.value || "", height: heightEl.value || "",
     qty: qtyEl.value || 1, color, desc,
@@ -200,7 +199,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
  function sendEmail(order) {
   const templateParams = {
     order_id: 100001,
-    to_email: "jusprint.services@gmail.com",
+    to_email: order.email,
     from_name: order.name,
     service: order.service,
     size: order.size || "-",
