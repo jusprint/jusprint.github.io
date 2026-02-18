@@ -175,23 +175,19 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const phone = document.getElementById("phone").value;
-  const desc = document.getElementById("desc").value;
-  const file = document.getElementById("image")?.files[0];
+  const desc = document.getElementById("desc").value; 
   const service = document.querySelector('input[name="service"]:checked')?.value;
   const size = getSelectedSize();
   const color = colorInput.value;
 
   if (!name || !service || !desc) { alert("Please fill required fields"); return; }
 
-  let imageBase64 = "";
-  if (file) imageBase64 = await fileToBase64(file);
-
+ 
   const order = {
     name,email, phone, service, size,
     width: widthEl.value || "", height: heightEl.value || "",
     qty: qtyEl.value || 1, color, desc,
-    price: calculatePrice(),
-    imageBase64, createdAt: new Date()
+    price: calculatePrice(), 
   };
 
  
@@ -213,7 +209,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     color: order.color || "-",
     price: `₱${order.price}`,
     description: order.desc,
-    image_url: order.imageBase64 || "https://static.vecteezy.com/system/resources/thumbnails/074/482/764/small/3d-product-feedback-icon-on-transparent-background-png.png"
+    image_url:  "https://static.vecteezy.com/system/resources/thumbnails/074/482/764/small/3d-product-feedback-icon-on-transparent-background-png.png"
   };
 
   emailjs.send("service_b9niqqs", "template_3lguulw", templateParams)
