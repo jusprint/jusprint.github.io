@@ -206,7 +206,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     dimensions: `${order.width || "-"} x ${order.height || "-"} ft`,
     quantity: order.qty,
     color: order.color || "-",
-    price: `₱${order.price}`,
+    price: `₱${order.price}.00`,
     description: order.desc,
     image_url:  "https://static.vecteezy.com/system/resources/thumbnails/074/482/764/small/3d-product-feedback-icon-on-transparent-background-png.png"
   };
